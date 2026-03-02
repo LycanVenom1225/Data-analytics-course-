@@ -1,0 +1,23 @@
+print("Let's play a game of Rock, Paper, Siccors. you can only select 1 = Rock, 2 = Paper or 3 = Scicors. best 2 out of 3 wins. ties will not end a round")
+prompt= ("player 1 please choose 1,2 or 3 only: ")
+prompt_2= ("player 2 please choose 1,2 or 3 only: ")
+message=""
+message_2=""
+options=["1","2","3"]
+
+while True:
+  message= input(prompt)
+  if message in options:
+    break
+  else:
+    print("Please enter a valid option")
+
+while True:
+  message_2= input(prompt_2)
+  if message_2 in options:
+    break
+  else:
+    print("Please enter a valid option")
+    
+    if message=="1":
+      print("Paper beats rock Player_2 is the winner!")
