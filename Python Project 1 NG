@@ -1,1 +1,22 @@
-https://colab.research.google.com/drive/1iAcly2Qho16fZzh-6lmUUyAoScrx_syk#scrollTo=cBX3SN4kO2YY
+import pandas as pd
+df=pd.read_csv('https://raw.githubusercontent.com/CunyLaguardiaDataAnalytics/datasets/master/2014-15_To_2016-17_School-_Level_NYC_Regents_Report_For_All_Variables.csv')
+
+df.groupby("School Level").count()
+
+New=df[['School DBN','School Name','School Level','Regents Exam','Year', 'Total Tested',]]
+
+bx=New[(New['School DBN'].str.contains('X'))&(New['School Level'].str.contains('High school'))&(New['Regents Exam'].str.contains('Physics'))&(New['Year']==(2017))]
+
+bx_gr=bx.groupby(['School DBN','School Name','School Level','Regents Exam','Year'],as_index=False)['Total Tested'].sum()
+
+bx_gr=bx_gr.astype(str)
+
+bx_pick=bx_gr[(bx_gr['School Name'].str.contains('Bronx High School of Science'))]
+
+bx_pick.head()
+
+bx_gr.plot.scatter(x='Total Tested', y='School Name')
+
+
+
+Based on the data it appears that more students at Bronx High School of Science take Physics regents than any other school in the bronx.This is expected as this school is the top high school in all of NYC
