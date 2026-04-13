@@ -19,4 +19,4 @@ bx_gr.plot.scatter(x='Total Tested', y='School Name')
 
 
 
-Based on the data it appears that more students at Bronx High School of Science take Physics regents than any other school in the bronx.This is expected as this school is the top high school in all of NYC
+Based on the data it appears that more students at Bronx High School of Science take Physics regents than any other High school in the bronx.This is expected as this school is the top high school in all of NYC
